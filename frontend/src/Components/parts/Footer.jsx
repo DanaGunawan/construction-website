@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="col-md-3">
               <h3 className="mb-3" >Quick Links</h3>
               <ul>
-                <li><a href="About-us">About-us</a></li>
+                <li><a href="AboutUs">About Us</a></li>
                 <li><a href="Services">Services</a></li>
                 <li><a href="Projects">Projects</a></li>
                 <li><a href="Blogs">Blogs</a></li>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
           <hr className="text-white"/>
           <div className="text-center pt-4">
-            <p>&copy; 2024 UrbanEdge Constructions. All rights reserved.</p>
+            <p>&copy; Created By DanaGunawan, For Learning</p>
           </div>
         </div>
       </footer>

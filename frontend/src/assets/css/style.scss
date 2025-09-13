@@ -2,15 +2,18 @@
 $primary-color: #fe538d;
 $secondary-color: #ffb703;
 $text-color: #000;
-$text-white:#ffff;
+$text-white: #ffff;
 $dark-background: #222725;
+$light-background: #9e9b9b;
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 body {
   font-family: "rubik", san-serif;
 }
-
+html, body {
+  overflow-x: hidden;
+}
 h1 {
   font-size: 4.5em;
 }
@@ -18,7 +21,17 @@ h2 {
   font-size: 3em;
 }
 h3 {
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  font-size: 1.2em;
+  font-weight:400;
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 header {
@@ -29,109 +42,271 @@ header {
       text-transform: uppercase;
       font-weight: 500;
       margin-left: 20px;
-    }
-  }
-    .logo {
-      text-transform: uppercase;
-      font-size: 1em;
-      font-weight: 500;
-      span {
-        color: #fe538d;
+
+      &:hover {
+        color: $primary-color;
       }
     }
-}
+  }
 
-.section-1{
-    .hero{
-        background:linear-gradient(to right,rgba(0,0,0,0.8), rgba(0,0,0,0)), url('../images/hero.jpg');
-        min-height: 100vh;
-        color:$text-white;
-        span{
-            color:$secondary-color;
-            font-size:1.5em;
-            font-weight: 500;
-        }
+  .logo {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+    span {
+      color: #fe538d;
     }
+  }
 }
 
-.btn-primary{
-  background-color:$primary-color;
-  padding:15px 20px;
+.section-1 {
+  .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      url("../images/hero.jpg");
+    min-height: 100vh;
+    color: $text-white;
+    span {
+      color: $secondary-color;
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  padding: 15px 20px;
   border: 1px solid $primary-color;
   font-weight: 500;
   font-size: 1em;
   text-transform: uppercase;
-  &:hover{
-    background-color:$secondary-color;
-    border:1px solid $secondary-color;
+  &:hover {
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
   }
 }
 
-.btn-secondary{
-  background-color:$secondary-color;
-  padding:15px 20px;
+.btn-secondary {
+  background-color: $secondary-color;
+  padding: 15px 20px;
   border: 1px solid $secondary-color;
-  text-transform:uppercase;
-  font-weight:500;
+  text-transform: uppercase;
+  font-weight: 500;
   font-size: 1em;
-  &:hover{
-    background-color:$primary-color;
-    border:1px solid $primary-color;
+  &:hover {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
   }
 }
 
-.section-2{
-  img{
+.section-2 {
+  img {
     border-radius: 40px;
   }
-  span{
-    color:$primary-color;
-    font-size:1.2em;
-    font-weight:500;
-    text-transform:uppercase;
+  span {
+    color: $primary-color;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
     display: block;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
-  h1{
-    font-size:2.5em;
-    font-weight:700;
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
   }
 }
 
-ul{
-  padding-left:0;
-  margin-left:0;
-  li{
-    padding:5px 0px;
+ul {
+  padding-left: 0;
+  margin-left: 0;
+  li {
+    padding: 5px 0px;
     list-style: none;
-    font-size:1em;
-    color:$text-white;
+    font-size: 1em;
+    color: $text-white;
+  }
+}
+.section-3 {
+  background-color: $light-background;
+
+  .item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px; // keep corners consistent
+    
+
+    .service-img {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1 / 1.2;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        background: linear-gradient(
+          180deg,
+          rgba(217, 217, 217, 0) 0%,
+          rgba(217, 217, 217, 0) 13.02%,
+          rgba(0, 0, 0, 0.51) 42.5%,
+          rgba(0, 0, 0, 0.63) 70%,
+          #000000 100%
+        );
+        opacity: 0.7;
+        transition: opacity 0.4s ease-in-out;
+      }
+    }
+
+    .btn-primary {
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .service-body {
+      color: $text-white;
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+      right: 30px;
+      transition: all 0.4s ease-in-out;
+      transform: translateY(80%);
+
+      .service-content {
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      .service-img {
+        img {
+          transform: scale(1.05); // subtle zoom effect
+        }
+
+        &::after {
+          opacity: 0.9; // darkens overlay a bit more on hover
+        }
+      }
+
+      .service-body {
+        transform: translateY(0%);
+
+        .service-content {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
+.section-4{
+  .card{
+    border-radius:40px;
+    margin-bottom: 15px;
+  }
+}
 
-
-
-
-
-footer{
-  background-color:$dark-background;
-  h3{
-    color:$secondary-color;
-    font-size:1.5em;
+.section-header {
+  span {
+    color: $primary-color;
+    font-size: 1.2em;
+    font-weight: 500;
     text-transform: uppercase;
   }
-  a{
-    color:$text-white;
-    font-size:1.2em;
-    font-weight: 400;
-    text-decoration:none;
-  }
-  p{
-    color:$text-white;
-    font-size:1.2em;
-    font-weight: 400;
+}
 
+.section-5{
+  .swiper{
+    padding: 25px 25px 50px 25px;
   }
+  .swiper-pagination-bullet-active {
+    background-color: $secondary-color
+  }
+  .card{
+    border-radius: 40px;
+    .card-body{
+      .rating{
+        color: $secondary-color;
+      }
+      img{
+        border-radius: 50%;
+      }
+      .content{
+        p{
+          font-weight: 400;
+          color: $text-color;
+        }
+        .name{
+          font-size: 1.2em;
+          font-weight: 500;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
 
+
+.section-6{
+  .card{
+    border-radius:40px;
+    img{
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+    .card-body{
+      a.title{
+        font-size:1.2em;
+      }
+    }
+  }
+}
+
+.small-btn{
+  padding:10px 15px;
+}
+.large-btn{
+  padding:15px 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: $dark-background;
+  h3 {
+    color: $secondary-color;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  a {
+    color: $text-white;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  p {
+    color: $text-white;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
 }

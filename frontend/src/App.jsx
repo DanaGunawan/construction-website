@@ -4,7 +4,6 @@ import Home from './Components/Frontend/Home';
 import About from './Components/Frontend/About';
 import './assets/css/style.scss';
 
-
 function App() {
 
   return (
@@ -15,6 +14,7 @@ function App() {
           <Route path='/About' element={<About />} />
         </Routes>
       </BrowserRouter>
+        
     </>
   )
 }
